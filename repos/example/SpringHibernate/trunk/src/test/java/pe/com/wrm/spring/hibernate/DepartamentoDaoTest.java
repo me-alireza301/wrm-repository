@@ -15,7 +15,7 @@ public class DepartamentoDaoTest extends
     }
 	
 		
-	public void testGuardar() {
+	public void testSave() {
 		dao = (DepartamentoDao) applicationContext.getBean("departamentoDao");
 		
 		Departamento departamento = new Departamento();
