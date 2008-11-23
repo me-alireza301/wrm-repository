@@ -24,11 +24,11 @@ public class RunSpringHibernate {
 		departamentoDao.save(departamento);
 		System.out.println("Se grabo el registro 1");
 		
-		departamento = new Departamento();
+		/*departamento = new Departamento();
 		departamento.setId(2);
 		departamento.setDescripcion("Marketing");
 		departamento.setEstado("A");
-		System.out.println("Se grabo el registro 2");
+		System.out.println("Se grabo el registro 2");*/
 		
 	}
 
