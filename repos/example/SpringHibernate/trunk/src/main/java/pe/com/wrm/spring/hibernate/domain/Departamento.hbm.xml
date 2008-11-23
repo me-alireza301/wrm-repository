@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22-nov-2008 18:32:45 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="pe.com.wrm.spring.hibernate.domain.Departamento" table="departamento" catalog="dbempleado">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="100" />
+        </property>
+        <property name="estado" type="string">
+            <column name="estado" length="1" not-null="true" />
+        </property>
+        <!--
+         
+        <set name="empleados" inverse="true">
+            <key>
+                <column name="departamento_id" />
+            </key>
+            <one-to-many class="pe.com.wrm.spring.hibernate.domain.Empleado" />
+        </set>
+        -->
+    </class>
+</hibernate-mapping>
