@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 3, 2009 3:38:16 PM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="pe.com.sgp.domain.Pedido" table="pedido" catalog="dbpedido">
+        <id name="pedidoId" type="java.lang.Long">
+            <column name="PEDIDO_ID" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="cliente" class="pe.com.sgp.domain.Cliente" fetch="select">
+            <column name="CLIENTE_ID" not-null="true" />
+        </many-to-one>
+        <property name="fechaPedido" type="date">
+            <column name="FECHA_PEDIDO" length="10" not-null="true" />
+        </property>
+        		<bag name="pedidoItems" inverse="true" lazy="true"
+			cascade="save-update">
+			<key>
+				<column name="PEDIDO_ID">
+					<comment></comment>
+				</column>
+			</key>
+			<one-to-many class="pe.com.sgp.domain.PedidoItem" />
+		</bag>
+		<!-- 
+        <set name="pedidoItems" inverse="true">
+            <key>
+                <column name="PEDIDO_ID" not-null="true" />
+            </key>
+            <one-to-many class="pe.com.sgp.domain.PedidoItem" />
+        </set>
+         -->
+    </class>
+</hibernate-mapping>

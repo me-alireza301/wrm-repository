@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 3, 2009 3:38:16 PM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="pe.com.sgp.domain.Cliente" table="cliente" catalog="dbpedido">
+        <id name="clienteId" type="java.lang.Long">
+            <column name="CLIENTE_ID" />
+            <generator class="native" />
+        </id>
+        <property name="razonSocial" type="string">
+            <column name="RAZON_SOCIAL" length="50" not-null="true" />
+        </property>
+        <property name="ruc" type="string">
+            <column name="RUC" length="11" not-null="true" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="TELEFONO" length="20" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="DIRECCION" length="50" not-null="true" />
+        </property>
+        <property name="representante" type="string">
+            <column name="REPRESENTANTE" length="50" not-null="true" />
+        </property>
+        <property name="dni" type="string">
+            <column name="DNI" length="11" not-null="true" />
+        </property>
+        
+        <bag name="pedidos" inverse="true" lazy="true"
+			cascade="save-update">
+			<key>
+				<column name="CLIENTE_ID">
+					<comment></comment>
+				</column>
+			</key>
+			<one-to-many class="pe.com.sgp.domain.Pedido" />
+		</bag>
+        <!--
+        <set name="pedidos" inverse="true">
+            <key>
+                <column name="CLIENTE_ID" not-null="true" />
+            </key>
+            <one-to-many class="pe.com.sgp.domain.Pedido" />
+        </set>
+         -->
+    </class>
+</hibernate-mapping>
