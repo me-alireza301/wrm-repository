@@ -59,7 +59,7 @@
 		<property name="configLocations">
 			<list>
 				<value>
-					classpath:pe/com/sgp/config/support-hibernate.cfg.xml
+					classpath:pe/com/sgp/config/hibernate.cfg.xml
 				</value>
 			</list>
 		</property>
