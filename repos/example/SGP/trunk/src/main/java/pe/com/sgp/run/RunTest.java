@@ -22,14 +22,17 @@ public class RunTest {
 
 		BeanFactory factory = new XmlBeanFactory(resource);
 		
+		System.out.println("Creando Entity");
 		 Articulo articulo = new Articulo();
 		 articulo.setDescripcion("Monitores Plasma");
 		 articulo.setPrecio(160);
-		 
+		 System.out.println("atributos del Entity cargados");
 		 /*ArticuloDAO articuloDAO =  (ArticuloDAO)factory.getBean("articuloDAO");
 		 articuloDAO.saveArticulo(articulo);*/
 		 
-		 ArticuloService articuloService = (ArticuloService)factory.getBean("articuloService");
+		 System.out.println("obteniendo servicios");
+		 ArticuloService articuloService = (ArticuloService)factory.getBean("bizTxArticuloService");
+		 System.out.println("ejecutando servicios");
 		 articuloService.saveArticulo(articulo);
 		 
 		 List<Articulo> listArticulo = articuloService.findArticulo();

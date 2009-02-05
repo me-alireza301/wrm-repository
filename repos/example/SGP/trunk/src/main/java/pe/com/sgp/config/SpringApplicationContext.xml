@@ -89,12 +89,12 @@
 	</bean>
 
 	<!-- Exceptions Service Definition -->
-	<bean id="businessTransactionServiceProxy" parent="baseTransactionProxy">
-		<property name="target" ref="articuloService" />
+	<bean id="bizTxArticuloService" parent="baseTransactionProxy">
+		<property name="target" ref="articuloServiceTarget" />
 	</bean>
 
 	<!-- ApplicationLog Service -->
-	<bean id="articuloService" class="pe.com.sgp.service.ArticuloServiceImpl" singleton="true">
+	<bean id="articuloServiceTarget" class="pe.com.sgp.service.ArticuloServiceImpl">
 		<property name="articuloDAO" ref="articuloDAO"/>
 	</bean>
 
