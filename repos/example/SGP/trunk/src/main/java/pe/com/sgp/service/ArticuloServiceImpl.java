@@ -10,10 +10,6 @@ public class ArticuloServiceImpl extends GenericServiceImpl implements ArticuloS
 	
 	private ArticuloDAO articuloDAO;
 	
-	public void setArticuloDao(ArticuloDAO articuloDAO) {
-		this.articuloDAO = articuloDAO;
-	}
-
 	public List<Articulo> findArticulo() {
 		return articuloDAO.findArticulo();
 	}
@@ -25,6 +21,14 @@ public class ArticuloServiceImpl extends GenericServiceImpl implements ArticuloS
 
 	public void saveArticulo(Articulo articulo) {
 		articuloDAO.saveArticulo(articulo);
+	}
+
+	public ArticuloDAO getArticuloDAO() {
+		return articuloDAO;
+	}
+
+	public void setArticuloDAO(ArticuloDAO articuloDAO) {
+		this.articuloDAO = articuloDAO;
 	}
 
 
