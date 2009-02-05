@@ -20,14 +20,14 @@ public class RunTest {
 		Resource resource = new FileSystemResource(pathFile);
 		BeanFactory factory = new XmlBeanFactory(resource);
 
-		/*System.out.println("Creando Entity");
+		System.out.println("Creando Entity");
 		Articulo articulo = new Articulo();
 		articulo.setDescripcion("Monitores Plasma");
-		articulo.setPrecio(160);*/
+		articulo.setPrecio(160);
 		System.out.println("obteniendo servicios");
 		ArticuloService articuloService = (ArticuloService) factory.getBean("bizTxArticuloService");
 		System.out.println("ejecutando servicios");
-		//articuloService.saveArticulo(articulo);
+		articuloService.saveArticulo(articulo);
 
 		List<Articulo> listArticulo = articuloService.findArticulo();
 		for (Iterator<Articulo> iterator = listArticulo.iterator(); iterator
