@@ -8,27 +8,24 @@ import pe.com.sgp.util.service.common.GenericServiceImpl;
 
 public class ArticuloServiceImpl extends GenericServiceImpl implements ArticuloService{
 	
-	private ArticuloDAO articuloDao;
+	private ArticuloDAO articuloDAO;
 	
+	public void setArticuloDao(ArticuloDAO articuloDAO) {
+		this.articuloDAO = articuloDAO;
+	}
+
 	public List<Articulo> findArticulo() {
-		return articuloDao.findArticulo();
+		return articuloDAO.findArticulo();
 	}
 
 	public Articulo findArticuloById(Long articuloId) {
-		Articulo articulo = articuloDao.findArticuloById(articuloId);
+		Articulo articulo = articuloDAO.findArticuloById(articuloId);
 		return articulo;
 	}
 
 	public void saveArticulo(Articulo articulo) {
-		articuloDao.saveArticulo(articulo);
+		articuloDAO.saveArticulo(articulo);
 	}
 
-	public ArticuloDAO getArticuloDao() {
-		return articuloDao;
-	}
-
-	public void setArticuloDao(ArticuloDAO articuloDao) {
-		this.articuloDao = articuloDao;
-	}
 
 }

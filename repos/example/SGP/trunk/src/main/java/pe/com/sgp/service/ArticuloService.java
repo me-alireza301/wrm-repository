@@ -1,7 +1,6 @@
 package pe.com.sgp.service;
 
 import java.util.List;
-
 import pe.com.sgp.domain.Articulo;
 import pe.com.sgp.util.service.common.GenericService;
 
