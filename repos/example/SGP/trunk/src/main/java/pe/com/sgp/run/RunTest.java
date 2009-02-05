@@ -14,34 +14,28 @@ import pe.com.sgp.service.ArticuloService;
 public class RunTest {
 
 	public static void main(String[] args) {
-		 /*ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");*/
 		System.out.println("Iniciando Pruebas");
-		
+
 		String pathFile = "./src/main/java/pe/com/sgp/config/SpringApplicationContext.xml";
 		Resource resource = new FileSystemResource(pathFile);
-
 		BeanFactory factory = new XmlBeanFactory(resource);
-		
-		System.out.println("Creando Entity");
-		 Articulo articulo = new Articulo();
-		 articulo.setDescripcion("Monitores Plasma");
-		 articulo.setPrecio(160);
-		 System.out.println("atributos del Entity cargados");
-		 /*ArticuloDAO articuloDAO =  (ArticuloDAO)factory.getBean("articuloDAO");
-		 articuloDAO.saveArticulo(articulo);*/
-		 
-		 System.out.println("obteniendo servicios");
-		 ArticuloService articuloService = (ArticuloService)factory.getBean("bizTxArticuloService");
-		 System.out.println("ejecutando servicios");
-		 articuloService.saveArticulo(articulo);
-		 
-		 List<Articulo> listArticulo = articuloService.findArticulo();
-		 for (Iterator<Articulo> iterator = listArticulo.iterator(); iterator.hasNext();) {
+
+		/*System.out.println("Creando Entity");
+		Articulo articulo = new Articulo();
+		articulo.setDescripcion("Monitores Plasma");
+		articulo.setPrecio(160);*/
+		System.out.println("obteniendo servicios");
+		ArticuloService articuloService = (ArticuloService) factory.getBean("bizTxArticuloService");
+		System.out.println("ejecutando servicios");
+		//articuloService.saveArticulo(articulo);
+
+		List<Articulo> listArticulo = articuloService.findArticulo();
+		for (Iterator<Articulo> iterator = listArticulo.iterator(); iterator
+				.hasNext();) {
 			Articulo obj = iterator.next();
 			System.out.println("Articulo = " + obj.getDescripcion());
 		}
-
-		 System.out.println("Fin de Pruebas");
+		System.out.println("Fin de Pruebas");
 	}
 
 }
