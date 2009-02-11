@@ -88,10 +88,11 @@
 		</property>
 	</bean>
 
-	<!-- Transaction Service Definition -->
+	<!-- Transaction Service Definition 
 	<bean id="bizTxArticuloService" parent="baseTransactionProxy">
 		<property name="target" ref="articuloServiceTarget" />
 	</bean>
+	-->
 	
 	<bean id="articuloServiceTarget"
 		class="pe.com.sgp.service.ArticuloServiceImpl">
