@@ -88,17 +88,31 @@
 		</property>
 	</bean>
 
-	<!-- Exceptions Service Definition -->
+	<!-- Transaction Service Definition -->
 	<bean id="bizTxArticuloService" parent="baseTransactionProxy">
 		<property name="target" ref="articuloServiceTarget" />
 	</bean>
-
-	<!-- ApplicationLog Service -->
-	<bean id="articuloServiceTarget" class="pe.com.sgp.service.ArticuloServiceImpl">
-		<property name="articuloDAO" ref="articuloDAO"/>
+	
+	<bean id="articuloServiceTarget"
+		class="pe.com.sgp.service.ArticuloServiceImpl">
+		<property name="articuloDAO" ref="articuloDAO" />
 	</bean>
 
+	<!-- Service Definition -->
+	<bean id="articuloService" class="pe.com.sgp.service.ArticuloServiceImpl">
+		<property name="articuloDAO" ref="articuloDAO"/>
+	</bean>
+	
+	<bean id="clienteService" class="pe.com.sgp.service.ClienteServiceImpl">
+		<property name="clienteDAO" ref="clienteDAO"/>
+	</bean>
+	
+	<!-- DAO Definition -->
 	<bean id="articuloDAO" class="pe.com.sgp.dao.ArticuloDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="clienteDAO" class="pe.com.sgp.dao.ClienteDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 
