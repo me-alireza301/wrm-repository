@@ -21,19 +21,26 @@
 		</property>
 	</bean>
 
-	<!-- JNDI DataSource for J2EE environments -->
-	
-	<!--<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-		<property name="jndiName" value="bsecore"/>
-	</bean>-->
-	
+	<bean id="sessionFactory" parent="abstractSessionFactory">
+		<property name="configLocations">
+			<list>
+				<value>
+					classpath:pe/com/sgp/config/hibernate.cfg.xml
+				</value>
+			</list>
+		</property>
+	</bean>
 
+	<!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
 	<!-- 
-		
 		********************************************************************************************************
 		* NOTICE: Abstract SessionFactory that serves as a TEMPLATE for application-specific SessionFactories  *
 		********************************************************************************************************
-		
 	-->
 	<bean id="abstractSessionFactory"
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean"
@@ -50,6 +57,9 @@
 				<prop key="hibernate.generate_statistics">
 					${hibernate.generate_statistics}
 				</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop> 
+        		<prop key="hibernate.cache.use_query_cache">true</prop> 
+        		<prop key="hibernate.cache.provider_class">net.sf.ehcache.hibernate.SingletonEhCacheProvider</prop>
 			</props>
 		</property>
 	</bean>

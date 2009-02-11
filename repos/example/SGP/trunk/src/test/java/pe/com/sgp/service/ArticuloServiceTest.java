@@ -1,37 +1,39 @@
-package pe.com.sgp.dao;
+package pe.com.sgp.service;
 
 import java.util.List;
 
 import pe.com.sgp.AbstractUnitTest;
 import pe.com.sgp.domain.Articulo;
 
-public class ArticuloDAOTest extends AbstractUnitTest{
-	
-	protected ArticuloDAO articuloDAO;
+public class ArticuloServiceTest extends AbstractUnitTest {
 
-	public void setArticuloDAO(ArticuloDAO articuloDAO) {
-		this.articuloDAO = articuloDAO;
+	protected ArticuloService articuloService;
+
+	public void setArticuloService(ArticuloService articuloService) {
+		this.articuloService = articuloService;
 	}
-
+	
 	public void testFindArticuloById(){
-		Articulo articulo = this.articuloDAO.findArticuloById(new Long(1));
+		Articulo articulo = this.articuloService.findArticuloById(new Long(1));
 		assertNotNull(articulo);
 	}
 	
 	public void testFindArticulo(){
-		List<Articulo> list = this.articuloDAO.findArticulo();
+		List<Articulo> list = this.articuloService.findArticulo();
 		/*for (Articulo l : list ) {
 			System.out.println("Articulo : "+ l.getDescripcion() );
 		}*/
 		assertTrue(list != null && list.size() > 0);
 	}
 	
+	
 	public void testSaveArticulo(){
 		Articulo articulo = new Articulo();
 		articulo.setDescripcion("USB 8 GB");
 		articulo.setPrecio(98);
-		this.articuloDAO.saveArticulo(articulo);
+		this.articuloService.saveArticulo(articulo);
 		assertNotNull(articulo.getArticuloId());
 	}
-
+	
+	
 }

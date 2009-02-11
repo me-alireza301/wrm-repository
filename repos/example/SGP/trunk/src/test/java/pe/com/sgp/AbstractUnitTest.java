@@ -5,7 +5,7 @@ import org.springframework.test.AbstractTransactionalDataSourceSpringContextTest
 public class AbstractUnitTest extends AbstractTransactionalDataSourceSpringContextTests {
 
 	protected String[] getConfigLocations() {
-		return new String[] { "/pe/com/sgp/config/SpringApplicationContext.xml"
+		return new String[] { "/pe/com/sgp/config/ApplicationContext-spring-config.xml"
 		};
 	}
 

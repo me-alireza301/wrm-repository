@@ -3,14 +3,15 @@
     "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
-	<!-- Exceptions Service Definition -->
-	<bean id="bizTxArticuloService" parent="baseTransactionProxy">
-		<property name="target" ref="articuloServiceTarget" />
-	</bean>
-
-	<!-- ApplicationLog Service -->
-	<bean id="articuloServiceTarget"
+	
+	<bean id="articuloService"
 		class="pe.com.sgp.service.ArticuloServiceImpl">
 		<property name="articuloDAO" ref="articuloDAO" />
 	</bean>
+
+	<bean id="clienteService"
+		class="pe.com.sgp.service.ClienteServiceImpl">
+		<property name="clienteDAO" ref="clienteDAO" />
+	</bean>
+	
 </beans>

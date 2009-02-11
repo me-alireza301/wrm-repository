@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	
+		<import
+		resource="classpath:pe/com/sgp/config/ApplicationContext-configuration.xml" />
+		<import
+		resource="classpath:pe/com/sgp/config/ApplicationContext-database.xml" />
+		<import
+		resource="classpath:pe/com/sgp/config/ApplicationContext-service.xml" />
+		<import
+		resource="classpath:pe/com/sgp/config/ApplicationContext-dao.xml" />
+
+	
+	<!-- propertyConfigurer Definition
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>
+					classpath:pe/com/sgp/config/database.properties
+				</value>
+			</list>
+		</property>
+	</bean>
+ 	-->
+	<!-- Database, Transaction, Abstract SessionFactory Definition
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>${hibernate.connection.driver_class}</value>
+		</property>
+		<property name="url">
+			<value>${hibernate.connection.url}</value>
+		</property>
+		<property name="username">
+			<value>${hibernate.connection.username}</value>
+		</property>
+		<property name="password">
+			<value>${hibernate.connection.password}</value>
+		</property>
+	</bean>
+
+	<bean id="sessionFactory" parent="abstractSessionFactory">
+		<property name="configLocations">
+			<list>
+				<value>
+					classpath:pe/com/sgp/config/hibernate.cfg.xml
+				</value>
+			</list>
+		</property>
+	</bean>
+ 
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="abstractSessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean"
+		abstract="true">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					${hibernate.dialect}
+				</prop>
+				<prop key="hibernate.show_sql">
+					${hibernate.show_sql}
+				</prop>
+				<prop key="hibernate.generate_statistics">
+					${hibernate.generate_statistics}
+				</prop>
+				<prop key="hibernate.cache.use_second_level_cache">
+					true
+				</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.provider_class">
+					net.sf.ehcache.hibernate.SingletonEhCacheProvider
+				</prop>
+			</props>
+		</property>
+	</bean>
+	-->
+	
+	<!-- Service Definition
+	<bean id="articuloService"
+		class="pe.com.sgp.service.ArticuloServiceImpl">
+		<property name="articuloDAO" ref="articuloDAO" />
+	</bean>
+
+	<bean id="clienteService"
+		class="pe.com.sgp.service.ClienteServiceImpl">
+		<property name="clienteDAO" ref="clienteDAO" />
+	</bean>
+	 -->
+	<!-- DAO Definition
+	<bean id="articuloDAO" class="pe.com.sgp.dao.ArticuloDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="clienteDAO" class="pe.com.sgp.dao.ClienteDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+ 	-->
+ 	
+</beans>
