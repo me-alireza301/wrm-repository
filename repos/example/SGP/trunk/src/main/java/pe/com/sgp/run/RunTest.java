@@ -22,7 +22,7 @@ public class RunTest {
 
 		System.out.println("Creando Entity");
 		Articulo articulo = new Articulo();
-		articulo.setDescripcion("Monitores Plasma");
+		articulo.setDescripcion("CD");
 		articulo.setPrecio(160);
 		System.out.println("obteniendo servicios");
 		ArticuloService articuloService = (ArticuloService) factory.getBean("articuloService");
