@@ -11,8 +11,7 @@ public class ArticuloServiceImpl extends GenericServiceImpl implements ArticuloS
 	private ArticuloDAO articuloDAO;
 	
 	public Articulo findArticuloById(Long articuloId) {
-		Articulo articulo = articuloDAO.findArticuloById(articuloId);
-		return articulo;
+		return articuloDAO.findArticuloById(articuloId);
 	}
 
 	public List<Articulo> findArticulo() {
