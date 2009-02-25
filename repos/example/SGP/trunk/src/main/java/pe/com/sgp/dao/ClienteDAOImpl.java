@@ -15,8 +15,7 @@ public class ClienteDAOImpl extends GenericDaoHibernate implements ClienteDAO{
 	}
 	
 	public List<Cliente> findCliente() {
-		List<Cliente> list = find(Cliente.class, "from Cliente");
-		return list;
+		return find(Cliente.class, "from Cliente");
 	}
 	
 	public void saveCliente(Cliente cliente) {

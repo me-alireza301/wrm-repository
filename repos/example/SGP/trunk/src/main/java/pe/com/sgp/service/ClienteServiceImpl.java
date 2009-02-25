@@ -11,8 +11,7 @@ public class ClienteServiceImpl extends GenericServiceImpl implements ClienteSer
 	private ClienteDAO clienteDAO;
 	
 	public Cliente findClienteById(Long clienteId) {
-		Cliente cliente = clienteDAO.findClienteById(clienteId);
-		return cliente;
+		return clienteDAO.findClienteById(clienteId);
 	}
 
 	public List<Cliente> findCliente() {

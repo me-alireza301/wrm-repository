@@ -14,8 +14,7 @@ public class ArticuloDAOImpl extends GenericDaoHibernate implements ArticuloDAO{
 	}
 	
 	public List<Articulo> findArticulo() {
-		List<Articulo> list = find(Articulo.class, "from Articulo");
-		return list;
+		return find(Articulo.class, "from Articulo");
 	}
 
 	public void saveArticulo(Articulo articulo) {

@@ -12,9 +12,8 @@ import pe.com.sgp.domain.Articulo;
 import pe.com.sgp.service.ArticuloService;
 
 public class RunTest {
-
 	public static void main(String[] args) {
-		System.out.println("Iniciando Pruebas");
+		/*System.out.println("Iniciando Pruebas");
 
 		String pathFile = "./src/main/java/pe/com/sgp/config/ApplicationContext-spring-config.xml";
 		Resource resource = new FileSystemResource(pathFile);
@@ -35,7 +34,7 @@ public class RunTest {
 			Articulo obj = iterator.next();
 			System.out.println("Articulo = " + obj.getDescripcion());
 		}
-		System.out.println("Fin de Pruebas");
+		System.out.println("Fin de Pruebas");*/
 
 		/*
 		 * System.out.println("Creando Entity"); Cliente cliente = new
