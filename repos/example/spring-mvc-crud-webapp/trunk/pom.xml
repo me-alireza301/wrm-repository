@@ -16,6 +16,7 @@
 			<url>http://code.google.com/p/wrm-repository/</url>
 			<organization>Java Projects WRM</organization>
 			<organizationUrl>http://code.google.com/p/wrm-repository/</organizationUrl>
+			<timezone>GMT (UTC) - 5</timezone>
 		</developer>
 	</developers>
 	<build>
