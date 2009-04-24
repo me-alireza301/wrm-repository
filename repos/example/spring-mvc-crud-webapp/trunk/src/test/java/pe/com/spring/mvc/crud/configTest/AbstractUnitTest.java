@@ -6,6 +6,9 @@ public class AbstractUnitTest extends
 		AbstractTransactionalDataSourceSpringContextTests {
 
 	protected String[] getConfigLocations() {
+		//setPopulateProtectedVariables(true);
+		//setAutowireMode(AUTOWIRE_BY_NAME);
+		//setDefaultRollback(false);
 
 		return new String[] {
 				"/pe/com/spring/mvc/crud/config/ApplicationContext-config-database.xml",
