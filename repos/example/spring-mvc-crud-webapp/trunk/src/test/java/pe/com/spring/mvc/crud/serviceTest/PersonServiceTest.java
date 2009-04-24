@@ -18,6 +18,7 @@ public class PersonServiceTest extends AbstractUnitTest {
 		this.personService.savePerson(person);
 		System.out.println("savePerson = " + person.toString());
 		assertNotNull(person.getId());
+		setComplete();
 	}
 
 	public void testUpdatePerson() {
