@@ -12,10 +12,12 @@ now everything should be OK in eclipse
 compile and deploy in apache tomcat
 
 http://localhost:8080/spring-ws-example/services
-http://localhost:8080/spring-ws-example/services/WS?wsdl
+http://localhost:8080/spring-ws-example/services/publicWebService?wsdl
 
 
 -------------------------------------
 command for create project with maven
 --------------------------------------
 mvn archetype:create -DarchetypeGroupId=org.springframework.ws -DarchetypeArtifactId=spring-ws-archetype -DarchetypeVersion=1.5.6 -DgroupId=pe.com.spring.ws.example -DartifactId=spring-ws-example
+
+If you have some problem with the source code, please let me know and send a email wroquem@gmail.com

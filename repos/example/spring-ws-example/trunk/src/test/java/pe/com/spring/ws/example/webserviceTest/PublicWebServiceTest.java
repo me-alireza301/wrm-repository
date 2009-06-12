@@ -11,7 +11,7 @@ public class PublicWebServiceTest extends TestCase{
 		factory.getInInterceptors().add(new LoggingInInterceptor());
 		factory.getOutInterceptors().add(new LoggingOutInterceptor());
 		factory.setServiceClass(PublicWebService.class);
-		factory.setAddress("http://localhost:8080/spring-ws-example/services/WSPublic");
+		factory.setAddress("http://localhost:8080/spring-ws-example/services/publicWebService");
 
 		System.out.println("testFindPersons");
 		PublicWebService webServiceClient = (PublicWebService) factory.create();

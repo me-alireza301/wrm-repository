@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>pe.com.spring.ws.example</groupId>
@@ -8,10 +7,8 @@
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>spring-ws-example</name>
-	<description>
-		This Project is an example of Spring Web Services with Apache
-		CXF
-	</description>
+	<description> This Project is an example of Spring Web Services with
+		Apache CXF </description>
 	<url>http://www.springframework.org/spring-ws</url>
 	<developers>
 		<developer>
@@ -20,8 +17,7 @@
 			<email>wroquem@gmail.com</email>
 			<url>http://code.google.com/p/wrm-repository/</url>
 			<organization>Java Projects WRM</organization>
-			<organizationUrl>
-				http://code.google.com/p/wrm-repository/
+			<organizationUrl> http://code.google.com/p/wrm-repository/
 			</organizationUrl>
 			<timezone>GMT (UTC) - 5</timezone>
 		</developer>

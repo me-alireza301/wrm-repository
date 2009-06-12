@@ -13,7 +13,8 @@ public class AbstractUnitTest extends
 		return new String[] {
 				"/pe/com/spring/ws/example/config/AppContext-config-database.xml",
 				"/pe/com/spring/ws/example/config/AppContext-dao.xml",
-				"/pe/com/spring/ws/example/config/AppContext-service.xml" };
+				"/pe/com/spring/ws/example/config/AppContext-service.xml",
+				"/pe/com/spring/ws/example/config/AppContext-web-service-client-test.xml"};
 	}
 
 	public void testApp() {

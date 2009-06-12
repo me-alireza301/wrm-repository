@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
  					http://www.springframework.org/schema/beans/spring-beans.xsd
  					http://cxf.apache.org/jaxws
@@ -14,7 +15,12 @@
     <!-- The service bean for web services-->
     <bean id="publicWebService" class="pe.com.spring.ws.example.webservice.PublicWebServiceImpl" />
 
+    <!-- Declaramos el endpoint de nuestro servicio web, indicando cual es la
+         clase de implementación. En el atributo "implementor" podemos escribir
+         el nombre completo de la clase implementación, o referenciar a un
+         bean de Spring usando un # seguido del nombre del bean.
+    -->
 	<!-- Service endpoint -->
 	<jaxws:endpoint id="ws" implementor="#publicWebService"
-		address="/WSPublic" />
+		address="/publicWebService" />
 </beans>
