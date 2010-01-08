@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="organizationDao"
+		class="pe.com.spring.jpa.hibernate.dao.impl.OrganizationDaoImpl">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean id="partyRoleDao" class="pe.com.spring.jpa.hibernate.dao.impl.PartyRoleDaoImpl">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean id="partyStatusDao" class="pe.com.spring.jpa.hibernate.dao.impl.PartyStatusDaoImpl">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean id="partyTypeDao" class="pe.com.spring.jpa.hibernate.dao.impl.PartyTypeDaoImpl">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean id="personDao" class="pe.com.spring.jpa.hibernate.dao.impl.PersonDaoImpl">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean id="roleTypeDao" class="pe.com.spring.jpa.hibernate.dao.impl.RoleTypeDaoImpl">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean id="statusDao" class="pe.com.spring.jpa.hibernate.dao.impl.StatusDaoImpl">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean id="statusTypeDao" class="pe.com.spring.jpa.hibernate.dao.impl.StatusTypeDaoImpl">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+</beans>
