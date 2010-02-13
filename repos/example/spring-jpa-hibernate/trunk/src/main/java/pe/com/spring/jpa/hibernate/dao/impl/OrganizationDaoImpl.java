@@ -29,4 +29,7 @@ public class OrganizationDaoImpl extends GenericJpaDaoHibernate implements Organ
 		return super.update(organization);
 	}
 
+	public final List<Organization> findOrganizations() {
+		return super.find(Organization.class, "from Organization");
+	}
 }
